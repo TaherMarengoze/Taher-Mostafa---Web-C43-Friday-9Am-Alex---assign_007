@@ -1,0 +1,456 @@
+/* global resets
+ */
+:root{
+    --color-primary: hsl(212, 100%, 50%);
+    --color-primary-light: hsl(212, 100%, 90%);
+}
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* General Styles
+ */
+
+.title h2{
+    font-size: 2.8rem;
+}
+.title-line{
+    width: 40px;
+    height: 5px;
+    display: inline-block;
+    padding: 0;
+    margin-top: 0;
+}
+
+.underline-title .title::after{
+    content: "";
+    display: block;
+    width: 95%;
+    height: 3px;
+    background-color: #0D6EFD;
+    margin-top: 8px;
+    border-radius: 100vh;
+}
+
+.overlay{
+    opacity: 0.7;
+}
+
+/* NavBar
+ */
+nav.navbar{
+    background-color: #05050580;
+}
+nav .navbar-nav{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav .navbar-nav .nav-link.active::after,
+nav .navbar-nav .nav-link.show::after {
+    content: "";
+    width: 90%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+}
+
+nav .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+}
+nav .nav-item{
+    margin-right: 15px;
+}
+nav .nav-item .nav-link::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: 400ms all;
+}
+
+nav .nav-item:hover .nav-link::after{
+    width: 90%;
+}
+
+.top-nav-btn{
+    --side: 40px;
+    position: fixed;
+    z-index: 900;
+    bottom: 0;
+    right: 0;
+    width: var(--side);
+    height: var(--side);
+    margin: auto 1rem 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+
+    background-color: hsl(216, 98%, 52%);
+    transition: 300ms all;
+}
+.top-nav-btn:hover{
+    background-color: hsl(216, 98%, 72%);
+}
+
+
+/* Hero Section
+ */
+#hero{
+    background-image: url(../images/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#hero .overlay{
+    background-color: #05050580;
+}
+
+.hero-title{
+    font-size: 3.3rem;
+    font-weight: 700;
+}
+
+.typing-animation{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.typing-animation::before{
+    content: "";
+    animation-name: typing;
+    animation-timing-function: linear;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+.typing-animation::after{
+    content:"|"
+}
+
+/* Skill Bars
+ */
+.skills .progress{
+    height: 8px;
+}
+
+.pv-45{
+    --prog-val:45%;
+    --prog-text:"45";
+}
+
+.pv-70{
+    --prog-val:70%;
+    --prog-text:"70";
+}
+
+.pv-80{
+    --prog-val:80%;
+    --prog-text:"80";
+}
+
+.pv-90{
+    --prog-val:90%;
+    --prog-text:"90";
+}
+
+.progress-value .progress-label,
+.progress-value div.progress .progress-bar {
+    width: var(--prog-val);
+}
+
+.progress-value .progress-label span:last-child::before{
+    content: var(--prog-text);
+}
+
+/* Services section
+ */
+
+ .service-item{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+ }
+
+.service-icon{
+    --side: 8rem;
+    width: var(--side);
+    height: var(--side);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--color-primary);
+}
+
+.service-item .service-icon{
+    transition: 400ms all;
+}
+
+.service-item:hover .service-icon{
+    color: #fff;
+    background-color: var(--color-primary);
+    border: 10px solid var(--color-primary-light);
+}
+
+/* Counters section
+ */
+#counters{
+    background-image: url(../images/counters-bg.jpg);
+    background-attachment: scroll ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    padding: 8rem 0;
+    
+}
+
+/* #counters .overlay{
+    opacity: 0.7;
+} */
+
+.counter-icon{
+    --side-length: 6rem;
+    font-size: 20px;
+    width: var(--side-length);
+    height: var(--side-length);
+    border: 10px solid var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Portfolio
+ */
+.work-item .wi-img{
+    transition: 500ms all ease-in-out;
+}
+
+.work-item:hover .wi-img{
+    transform: scale(1.25);
+}
+
+.wi-details{
+    font-size: 0.8rem;
+}
+
+.more-btn{
+    font-size: 2.8rem;
+}
+
+/* Testimonials
+ */
+ #testimonials{
+    background-image: url(../images/overlay-bg.jpg);
+    background-attachment: scroll ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    padding: 8rem 0;
+    
+}
+
+#testimonials .carousel-indicators{
+    position: relative;
+}
+
+#testimonials .carousel-indicators button{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.testimonial-item h3{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.testimonial-item figure{
+    width: fit-content;
+    margin: auto;
+    border-radius: 100vh;
+    overflow: hidden;
+}
+
+/* Blog
+ */
+.card-title{
+    margin-top: 1rem;
+}
+.post .date{
+    line-height: 28px;
+    height: 32px;
+}
+
+.post .author a{
+    color: #111;
+    transition: 500ms all;
+}
+
+.post .author a:hover{
+    color: #0078ff;
+}
+.post .author img{
+    width: 32px;
+    border-radius: 50%;
+}
+
+/* Contact section
+ */
+.social-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-list li{
+    display: inline-block;
+}
+
+.social-list a{
+    color: #111;
+}
+
+.fa-container{
+    width: fit-content;
+    margin: auto;
+}
+.social-icon{
+    width: 40px;
+    height: 40px;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 0 0 3px var(--color-primary);
+    display: flex;
+    transition: 400ms all;
+}
+
+.social-icon:hover{
+    color: #fff;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Footer
+ */
+footer{
+    background-color: #0062D3;
+}
+
+/* Animation
+ */
+
+ @keyframes typing {
+    0%    { content: "";}
+    1%    { content: "D";}
+    2%    { content: "De";}
+    3%    { content: "Des";}
+    4%    { content: "Desi";}
+    5%    { content: "Desig";}
+    6%    { content: "Design";}
+    7%    { content: "Designe";}
+    8%    { content: "Designer";}
+    9%    { content: "Designer";}
+    10%   { content: "Designer";}
+    11%   { content: "Designer";}
+    12%   { content: "Designer";}
+    13%   { content: "Designer";}
+    14%   { content: "Designer";}
+    15%   { content: "Designe";}
+    16%   { content: "Design";}
+    17%   { content: "Desig";}
+    18%   { content: "Desi";}
+    19%   { content: "Des";}
+    20%   { content: "De";}
+    21%   { content: "Dev";}
+    22%   { content: "Deve";}
+    23%   { content: "Devel";}
+    24%   { content: "Develo";}
+    25%   { content: "Develop";}
+    26%   { content: "Develope";}
+    27%   { content: "Developer";}
+    28%   { content: "Developer";}
+    29%   { content: "Developer";}
+    30%   { content: "Developer";}
+    31%   { content: "Developer";}
+    32%   { content: "Developer";}
+    33%   { content: "Developer";}
+    34%   { content: "Developer";}
+    35%   { content: "Develope";}
+    36%   { content: "Develop";}
+    37%   { content: "Develo";}
+    38%   { content: "Devel";}
+    39%   { content: "Deve";}
+    40%   { content: "Dev";}
+    41%   { content: "De";}
+    42%   { content: "D";}
+    43%   { content: "";}
+    44%   { content: "F";}
+    45%   { content: "Fr";}
+    46%   { content: "Fre";}
+    47%   { content: "Free";}
+    48%   { content: "Freel";}
+    49%   { content: "Freela";}
+    50%   { content: "Freelan";}
+    51%   { content: "Freelanc";}
+    52%   { content: "Freelance";}
+    53%   { content: "Freelancer";}
+    54%   { content: "Freelancer";}
+    55%   { content: "Freelancer";}
+    56%   { content: "Freelancer";}
+    57%   { content: "Freelancer";}
+    58%   { content: "Freelancer";}
+    59%   { content: "Freelancer";}
+    60%   { content: "Freelancer";}
+    61%   { content: "Freelance";}
+    62%   { content: "Freelanc";}
+    63%   { content: "Freelan";}
+    64%   { content: "Freela";}
+    65%   { content: "Freel";}
+    66%   { content: "Free";}
+    67%   { content: "Fre";}
+    68%   { content: "Fr";}
+    69%   { content: "F";}
+    70%   { content: "";}
+    71%   { content: "P";}
+    72%   { content: "Ph";}
+    73%   { content: "Pho";}
+    74%   { content: "Phot";}
+    75%   { content: "Photo";}
+    76%   { content: "Photog";}
+    77%   { content: "Photogr";}
+    78%   { content: "Photogra";}
+    79%   { content: "Photograp";}
+    80%   { content: "Photograph";}
+    81%   { content: "Photographe";}
+    82%   { content: "Photographer";}
+    83%   { content: "Photographer";}
+    84%   { content: "Photographer";}
+    85%   { content: "Photographer";}
+    86%   { content: "Photographer";}
+    87%   { content: "Photographer";}
+    88%   { content: "Photographer";}
+    89%   { content: "Photographer";}
+    90%   { content: "Photographe";}
+    91%   { content: "Photograph";}
+    92%   { content: "Photograp";}
+    93%   { content: "Photogra";}
+    94%   { content: "Photogr";}
+    95%   { content: "Photog";}
+    96%   { content: "Photo";}
+    97%   { content: "Phot";}
+    98%   { content: "Pho";}
+    99%   { content: "Ph";}
+    100%  { content: "P";}
+}
